@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Listings | 250 Property Management - Kigali</title>
+    <meta name="description" content="Browse premium apartments, villas, and commercial properties for rent and sale in Kigali, Rwanda. Managed by 250 Property Management.">
+    <link rel="canonical" href="https://250propertymanagement.com/listings.html">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { green: '#064E3B', gold: '#D97706', light: '#FAFAFA', dark: '#1E293B' }
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], heading: ['Plus Jakarta Sans', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@0.292.0/dist/umd/lucide.min.js"></script>
+</head>
+<body class="bg-brand-light text-brand-dark font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/95 backdrop-blur-sm border-b border-slate-200 z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-2">
+                    <i data-lucide="building-2" class="h-8 w-8 text-brand-green"></i>
+                    <span class="font-heading font-bold text-xl text-brand-green tracking-tight">250 Property Management</span>
+                </a>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-slate-600 hover:text-brand-green font-medium transition">Home</a>
+                    <a href="index.html#services" class="text-slate-600 hover:text-brand-green font-medium transition">Services</a>
+                    <a href="listings.html" class="text-brand-green font-bold transition">Listings</a> <!-- Active State -->
+                    <a href="index.html#contact" class="bg-brand-green text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-emerald-800 transition shadow-lg shadow-emerald-900/20">Get Free Evaluation</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-brand-green focus:outline-none">
+                        <i data-lucide="menu" class="h-7 w-7"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="index.html" class="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-md">Home</a>
+                <a href="listings.html" class="block px-3 py-2 text-base font-medium text-brand-green font-semibold">Listings</a>
+                <a href="index.html#contact" class="block px-3 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-md">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Listings Hero -->
+    <section class="pt-32 pb-12 bg-brand-green text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="font-heading text-3xl md:text-5xl font-bold mb-4">Find Your Perfect Property in Kigali</h1>
+            <p class="text-emerald-100 max-w-2xl mx-auto text-lg">Browse our curated selection of premium apartments, villas, and commercial spaces available for rent and sale.</p>
+        </div>
+    </section>
+
+    <!-- Filters & Listings Grid -->
+    <section class="py-16 flex-grow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="filter-btn active bg-brand-green text-white px-6 py-2.5 rounded-full font-semibold border border-brand-green transition" data-filter="all">All Properties</button>
+                <button class="filter-btn bg-white text-slate-600 px-6 py-2.5 rounded-full font-semibold border border-slate-200 hover:border-brand-green hover:text-brand-green transition" data-filter="rent">For Rent</button>
+                <button class="filter-btn bg-white text-slate-600 px-6 py-2.5 rounded-full font-semibold border border-slate-200 hover:border-brand-green hover:text-brand-green transition" data-filter="sale">For Sale</button>
+            </div>
+
+            <!-- Properties Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="listings-grid">
+                
+                <!-- Card 1: Rent -->
+                <div class="property-card bg-white rounded-2xl border border-slate-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition duration-300 group" data-category="rent">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=1000&auto=format&fit=crop" alt="Apartment" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+                        <div class="absolute top-4 left-4 bg-brand-green text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md">For Rent</div>
+                        <div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm text-brand-dark text-sm font-bold px-3 py-1.5 rounded-lg shadow-md">$1,200 / mo</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-1 text-slate-500 text-sm mb-2"><i data-lucide="map-pin" class="h-4 w-4"></i><span>Kimihurura, Kigali</span></div>
+                        <h3 class="font-heading text-xl font-bold text-brand-dark mb-3">Modern 2-Bedroom Executive Apartment</h3>
+                        <div class="flex items-center gap-4 text-slate-600 text-sm mb-6 border-t border-slate-200 pt-4">
+                            <div class="flex items-center gap-1"><i data-lucide="bed-double" class="h-4 w-4"></i> 2 Beds</div>
+                            <div class="flex items-center gap-1"><i data-lucide="bath" class="h-4 w-4"></i> 2 Baths</div>
+                        </div>
+                        <a href="https://wa.me/250787451118?text=Hi,%20I'm%20interested%20in%20the%202-Bedroom%20Apartment%20in%20Kimihurura%20(For%20Rent)." target="_blank" class="block w-full text-center bg-brand-dark text-white font-semibold py-3 rounded-lg hover:bg-brand-green transition">Inquire Now</a>
+                    </div>
+                </div>
+
+                <!-- Card 2: Sale -->
+                <div class="property-card bg-white rounded-2xl border border-slate-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition duration-300 group" data-category="sale">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1000&auto=format&fit=crop" alt="Villa" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+                        <div class="absolute top-4 left-4 bg-brand-gold text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md">For Sale</div>
+                        <div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm text-brand-dark text-sm font-bold px-3 py-1.5 rounded-lg shadow-md">$250,000</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-1 text-slate-500 text-sm mb-2"><i data-lucide="map-pin" class="h-4 w-4"></i><span>Nyarutarama, Kigali</span></div>
+                        <h3 class="font-heading text-xl font-bold text-brand-dark mb-3">Luxury 4-Bedroom Villa with Garden</h3>
+                        <div class="flex items-center gap-4 text-slate-600 text-sm mb-6 border-t border-slate-200 pt-4">
+                            <div class="flex items-center gap-1"><i data-lucide="bed-double" class="h-4 w-4"></i> 4 Beds</div>
+                            <div class="flex items-center gap-1"><i data-lucide="bath" class="h-4 w-4"></i> 3 Baths</div>
+                        </div>
+                        <a href="https://wa.me/250787451118?text=Hi,%20I'm%20interested%20in%20the%204-Bedroom%20Villa%20in%20Nyarutarama%20(For%20Sale)." target="_blank" class="block w-full text-center bg-brand-dark text-white font-semibold py-3 rounded-lg hover:bg-brand-green transition">Request Details</a>
+                    </div>
+                </div>
+
+                <!-- Card 3: Rent -->
+                <div class="property-card bg-white rounded-2xl border border-slate-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition duration-300 group" data-category="rent">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1000&auto=format&fit=crop" alt="Penthouse" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+                        <div class="absolute top-4 left-4 bg-brand-green text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md">For Rent</div>
+                        <div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm text-brand-dark text-sm font-bold px-3 py-1.5 rounded-lg shadow-md">$1,800 / mo</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-1 text-slate-500 text-sm mb-2"><i data-lucide="map-pin" class="h-4 w-4"></i><span>Kiyovu, Kigali</span></div>
+                        <h3 class="font-heading text-xl font-bold text-brand-dark mb-3">Premium 3-Bedroom Penthouse Suite</h3>
+                        <div class="flex items-center gap-4 text-slate-600 text-sm mb-6 border-t border-slate-200 pt-4">
+                            <div class="flex items-center gap-1"><i data-lucide="bed-double" class="h-4 w-4"></i> 3 Beds</div>
+                            <div class="flex items-center gap-1"><i data-lucide="bath" class="h-4 w-4"></i> 3.5 Baths</div>
+                        </div>
+                        <a href="https://wa.me/250787451118?text=Hi,%20I'm%20interested%20in%20the%20Penthouse%20in%20Kiyovu%20(For%20Rent)." target="_blank" class="block w-full text-center bg-brand-dark text-white font-semibold py-3 rounded-lg hover:bg-brand-green transition">Inquire Now</a>
+                    </div>
+                </div>
+
+                <!-- Card 4: Sale -->
+                <div class="property-card bg-white rounded-2xl border border-slate-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition duration-300 group" data-category="sale">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000&auto=format&fit=crop" alt="Townhouse" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+                        <div class="absolute top-4 left-4 bg-brand-gold text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md">For Sale</div>
+                        <div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm text-brand-dark text-sm font-bold px-3 py-1.5 rounded-lg shadow-md">$180,000</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-1 text-slate-500 text-sm mb-2"><i data-lucide="map-pin" class="h-4 w-4"></i><span>Remera, Kigali</span></div>
+                        <h3 class="font-heading text-xl font-bold text-brand-dark mb-3">Contemporary 3-Bedroom Townhouse</h3>
+                        <div class="flex items-center gap-4 text-slate-600 text-sm mb-6 border-t border-slate-200 pt-4">
+                            <div class="flex items-center gap-1"><i data-lucide="bed-double" class="h-4 w-4"></i> 3 Beds</div>
+                            <div class="flex items-center gap-1"><i data-lucide="bath" class="h-4 w-4"></i> 2 Baths</div>
+                        </div>
+                        <a href="https://wa.me/250787451118?text=Hi,%20I'm%20interested%20in%20the%20Townhouse%20in%20Remera%20(For%20Sale)." target="_blank" class="block w-full text-center bg-brand-dark text-white font-semibold py-3 rounded-lg hover:bg-brand-green transition">Request Details</a>
+                    </div>
+                </div>
+
+            </div>
+            
+            <!-- Owner CTA -->
+            <div class="mt-16 bg-brand-light rounded-2xl p-8 md:p-12 text-center border border-slate-200">
+                <h3 class="font-heading text-2xl font-bold text-brand-dark mb-3">Have a property to sell or rent?</h3>
+                <p class="text-slate-600 mb-6 max-w-xl mx-auto">Let 250 Property Management handle the marketing, viewings, and tenant screening. Get a free valuation today.</p>
+                <a href="index.html#contact" class="inline-flex items-center gap-2 bg-brand-gold text-white font-bold px-8 py-3 rounded-lg hover:bg-amber-700 transition shadow-lg shadow-amber-600/20">
+                    List Your Property With Us <i data-lucide="arrow-right" class="h-5 w-5"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Same as index) -->
+    <footer class="bg-brand-dark text-slate-300 py-12 border-t border-slate-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <i data-lucide="building-2" class="h-6 w-6 text-brand-gold"></i>
+                        <span class="font-heading font-bold text-xl text-white">250 Property Management</span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm">Professional, transparent, and local property management services tailored for the Rwandan real estate market.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-brand-gold transition">Home</a></li>
+                        <li><a href="index.html#services" class="hover:text-brand-gold transition">Services</a></li>
+                        <li><a href="listings.html" class="hover:text-brand-gold transition">Listings</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>+250 787 451 118</li>
+                        <li>info@250propertymanagement.com</li>
+                        <li>34 KN 41 St, Kiyovu, Kigali</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 text-center text-sm text-slate-500">
+                &copy; 2026 250 Property Management. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Icons
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+
+            // Mobile Menu
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            if(btn && menu) {
+                btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+            }
+
+            // FILTER LOGIC
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const propertyCards = document.querySelectorAll('.property-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Update active button styling
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('bg-brand-green', 'text-white', 'border-brand-green');
+                        btn.classList.add('bg-white', 'text-slate-600', 'border-slate-200');
+                    });
+                    button.classList.remove('bg-white', 'text-slate-600', 'border-slate-200');
+                    button.classList.add('bg-brand-green', 'text-white', 'border-brand-green');
+
+                    // Filter cards
+                    const filterValue = button.getAttribute('data-filter');
+                    propertyCards.forEach(card => {
+                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                            card.classList.remove('hidden');
+                            // Add a subtle fade-in animation
+                            card.style.animation = 'fadeIn 0.4s ease-out';
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+        });
+
+        // Add fade-in keyframes dynamically
+        const style = document.createElement('style');
+        style.innerHTML = `@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }`;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
